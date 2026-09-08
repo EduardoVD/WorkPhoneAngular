@@ -1,1 +1,20 @@
-<p>section works!</p>
+<section id="testimonials" class="testimonials-section">
+    <h2>Depoimentos de Colecionadores</h2>
+    
+    <div class="testimonials-grid">
+        @for (testimonial of testimonials; track testimonial.name) {
+            <div class="testimonial-card">
+                <div class="star">★★★★★</div>
+                    <p class="testimonial-text">“{{ testimonial.text }}”</p>
+                    <div class="testimonial-author">
+                        <img [src]="testimonial.photo" [alt]="testimonial.name" class="author-photo">
+                        <div class="author-info">
+                        <strong>{{ testimonial.name }}</strong>
+                        <span class="device">Aparelho: {{ testimonial.device }}</span>
+                        <span class="localization">{{ testimonial.localization }}</span>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
