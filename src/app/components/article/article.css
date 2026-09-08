@@ -12,6 +12,7 @@
     height: 300px;
     border: 4px solid #000000;
     border-radius: 12px;
+    box-shadow: 4px 4px 0px #000000;
 }
 
 .card {
