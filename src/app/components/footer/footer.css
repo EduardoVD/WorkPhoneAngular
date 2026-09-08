@@ -1,0 +1,9 @@
+.footer {
+    font-family: Cambria;
+    color: #ffffff;
+    background-color: #0080ff;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 4px solid #000000;
+    border-radius: 12px;
+}
