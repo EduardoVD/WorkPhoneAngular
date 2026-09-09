@@ -1,5 +1,5 @@
 <section id="testimonials" class="testimonials-section">
-    <h2>Depoimentos de Colecionadores</h2>
+    <h2>DEPOIMENTO DE COLECIONADORES</h2>
     
     <div class="testimonials-grid">
         @for (testimonial of testimonials; track testimonial.name) {
@@ -16,5 +16,39 @@
                 </div>
             </div>
         }
+    </div>
+    <hr class="form-divider">
+    <div class="testimonial-form">
+        <h3>VOCÊ TAMBÉM PODE COMPARTILHAR O SEU RELATO COM NÓS LOGO ABAIXO!</h3>
+        <div class="form-row">
+            <label class="form-field">NOME: <input type="text" placeholder="Seu Nome Completo..."/></label>
+            <label class="form-field">CIDADE: <input type="text" placeholder="Sua Sidade / Estado..."/></label>
+        </div>
+        <div class="form-group">
+            <p class="form-label">SELECIONE O APARELHO QUE VOCÊ POSSUI E DESEJA ESCREVER UM RELATO:</p>
+            <div class="radio-options">
+                <label class="radio-label"><input name="device" type="radio"/> Nokia 3310</label>
+                <label class="radio-label"><input name="device" type="radio"/> Motorola Razr V3</label>
+                <label class="radio-label"><input name="device" type="radio"/> Sony Ericsson W800i Walkman</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <p class="form-label">QUAL FOI O SEU NÍVEL DE SATISFAÇÃO COM O PRODUTO?</p>
+            <div class="radio-options">
+                <label class="radio-label"><input name="grade" type="radio"/> Péssimo</label>
+                <label class="radio-label"><input name="grade" type="radio"/> Ruim</label>
+                <label class="radio-label"><input name="grade" type="radio"/> Médio</label>
+                <label class="radio-label"><input name="grade" type="radio"/> Bom</label>
+                <label class="radio-label"><input name="grade" type="radio"/> Ótimo</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <p class="form-label">DESCREVA SEU DEPOIMENTO EM RELAÇÃO AO PRODUTO LOGO ABAIXO:</p>
+            <textarea placeholder="Escreva seu Relato ou Experiência..." rows="4"></textarea>
+        </div>
+        <div class="form-actions">
+            <button type="button" class="btn-save">SALVAR</button>
+            <button type="reset" class="btn-delete">EXCLUIR</button>
+        </div>
     </div>
 </section>
