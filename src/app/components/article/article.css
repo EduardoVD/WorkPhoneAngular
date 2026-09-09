@@ -31,3 +31,22 @@
     margin: 0;
     line-height: 1.5;
 }
+
+.card-button {
+    font-family: Cambria;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0px #000000;
+    margin-top: 24px;
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.card-button:hover {
+    color: #ffffff;
+    background-color: #540d9b;
+    transform: translateY(-2px);
+}
