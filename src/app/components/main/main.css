@@ -11,3 +11,8 @@
 .main-home p {
     text-indent: 30px;
 }
+
+.main-home hr {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}

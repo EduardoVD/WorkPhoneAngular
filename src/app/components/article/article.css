@@ -43,8 +43,7 @@
 
 .device-title {
     margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 1.5rem;
+    margin-bottom: 8px; 
 }
 
 .device-description {
@@ -70,7 +69,7 @@
 
 .card-button:hover {
     color: #ffffff;
-    background-color: #540d9b;
+    background-color: #0050ff;
     transform: translateY(-2px);
 }
 
@@ -128,7 +127,7 @@
 .modal-header h3 {
     margin: 0;
     font-size: 1.4rem;
-    color: #0080ff;
+    color: #0050ff;
 }
 
 .modal-close-btn {
@@ -146,7 +145,7 @@
 
 .modal-close-btn:hover {
     transform: translateY(-2px);
-    background-color: #ff4d4d;
+    background-color: #ff2500;
     color: #ffffff;
 }
 

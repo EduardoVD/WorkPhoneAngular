@@ -1,5 +1,5 @@
 <section id="article" class="article">
-    <h2>Nosso Catalógo</h2>
+    <h2><strong>CATÁLOGO</strong></h2>
     <div class="device-grid">
         @for (device of devices; track device.title) {
             <div class="card">
@@ -8,7 +8,7 @@
                     <h3 class="device-title">{{ device.title }}</h3>
                     <p class="device-description">{{ device.description }}</p>
                     <button class="card-button" (click)="openSpecs(device)">
-                        Verificar Especificações do Aparelho
+                        VERIFICAR ESPECIFICAÇÕES DO APARELHO
                     </button>
                 </div>
             </div>
