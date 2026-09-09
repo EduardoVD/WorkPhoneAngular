@@ -7,9 +7,41 @@
                 <div class="card-info">
                     <h3 class="device-title">{{ device.title }}</h3>
                     <p class="device-description">{{ device.description }}</p>
-                    <button class="card-button">Verificar Especificações do Aparelho</button>
+                    <button class="card-button" (click)="openSpecs(device)">
+                        Verificar Especificações do Aparelho
+                    </button>
                 </div>
             </div>
         }
     </div>
+
+    @if (selectedDevice) {
+        <div class="modal-overlay" (click)="closeSpecs()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <div class="modal-header">
+                    <h3>Ficha Técnica: {{ selectedDevice.title }}</h3>
+                    <button class="modal-close-btn" (click)="closeSpecs()" aria-label="Fechar modal">✕</button>
+                </div>
+
+                <div class="modal-body">
+                    <img [src]="selectedDevice.photo" [alt]="selectedDevice.title" class="modal-photo">
+
+                    <ul class="specs-list">
+                        <li><strong>Ano de Lançamento:</strong> {{ selectedDevice.specs.year }}</li>
+                        <li><strong>Dimensões:</strong> {{ selectedDevice.specs.dimensions }}</li>
+                        <li><strong>Peso:</strong> {{ selectedDevice.specs.weight }}</li>
+                        <li><strong>Tela:</strong> {{ selectedDevice.specs.screen }}</li>
+                        <li><strong>Bateria:</strong> {{ selectedDevice.specs.battery }}</li>
+                        <li><strong>Câmera:</strong> {{ selectedDevice.specs.camera }}</li>
+                        <li><strong>Destaques:</strong> {{ selectedDevice.specs.highlights }}</li>
+                    </ul>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="card-button modal-btn-close" (click)="closeSpecs()">Fechar</button>
+                </div>
+            </div>
+        </div>
+    }
 </section>
+
