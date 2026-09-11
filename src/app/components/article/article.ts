@@ -7,7 +7,11 @@ export interface DeviceSpecs {
   screen: string;
   battery: string;
   camera: string;
+  storage: string;
   highlights: string;
+  price: string;
+  availability: string;
+  descont: string;
 }
 
 export interface Devices {
@@ -46,7 +50,11 @@ export class Article {
         screen: 'Monocromática (84 x 48 pixels)',
         battery: '900 mAh (até 260h em standby)',
         camera: 'Não possui',
-        highlights: 'Jogo da Cobrinha (Snake II), capas trocáveis e construção ultra resistente.'
+        storage: '2 KB',
+        highlights: 'Jogo da Cobrinha (Snake II), capas trocáveis e construção ultra resistente.',
+        price: 'R$350,00',
+        availability: '102',
+        descont: 'N/A'
       }
     },
     {
@@ -60,7 +68,11 @@ export class Article {
         screen: 'TFT 2.2" (176 x 220) + Externa CSTN',
         battery: '680 mAh',
         camera: 'VGA (640 x 480 pixels)',
-        highlights: 'Corpo em alumínio aeronáutico, teclado gravado a laser e mecanismo flip icônico.'
+        storage: '5,5 MB',
+        highlights: 'Corpo em alumínio aeronáutico, teclado gravado a laser e mecanismo flip icônico.',
+        price: 'R$800,00',
+        availability: '298',
+        descont: '28% de Desconto'
       }
     },
     {
@@ -74,7 +86,11 @@ export class Article {
         screen: 'TFT 1.8" (176 x 220 pixels, 256k cores)',
         battery: '900 mAh (até 30 horas de áudio)',
         camera: '2.0 Megapixels com autofoco e flash LED',
-        highlights: 'Selo oficial Walkman, fones intra-auriculares premium e cartão Memory Stick 512MB.'
+        storage: '34 MB',
+        highlights: 'Selo oficial Walkman, fones intra-auriculares premium e cartão Memory Stick 512MB.',
+        price: 'R$750,00',
+        availability: '32',
+        descont: 'N/A'
       }
     }
   ];

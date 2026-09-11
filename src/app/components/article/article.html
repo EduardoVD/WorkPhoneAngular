@@ -20,7 +20,6 @@
             <div class="modal-content" (click)="$event.stopPropagation()">
                 <div class="modal-header">
                     <h3>Ficha Técnica: {{ selectedDevice.title }}</h3>
-                    <button class="modal-close-btn" (click)="closeSpecs()" aria-label="Fechar modal">✕</button>
                 </div>
 
                 <div class="modal-body">
@@ -33,7 +32,12 @@
                         <li><strong>Tela:</strong> {{ selectedDevice.specs.screen }}</li>
                         <li><strong>Bateria:</strong> {{ selectedDevice.specs.battery }}</li>
                         <li><strong>Câmera:</strong> {{ selectedDevice.specs.camera }}</li>
+                        <li><strong>Armazenamento:</strong> {{ selectedDevice.specs.storage }}</li>
                         <li><strong>Destaques:</strong> {{ selectedDevice.specs.highlights }}</li>
+                        <li><hr></li>
+                        <li><strong>Preço:</strong> {{ selectedDevice.specs.price }}</li>
+                        <li><strong>Disponíbilidade:</strong> {{ selectedDevice.specs.availability }}</li>
+                        <li><strong>Desconto:</strong> {{ selectedDevice.specs.descont }}</li>
                     </ul>
                 </div>
 
