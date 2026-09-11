@@ -1,9 +1,71 @@
 <header id="top" class="header-peek">
     <h1>TELEFONIA RETRÔ</h1>
-    <nav class="menu-navigation">
-        <a href="#main">ÁREA PRINCIPAL</a>
-        <a href="#article">CATÁLOGO</a>
-        <a href="#testimonials">DEPOIMENTOS</a>
-        <a href="#footer">SOBRE</a>
-    </nav>
+    
+    <div class="header-actions">
+        <nav class="menu-navigation">
+            <a href="#main">ÁREA PRINCIPAL</a>
+            <a href="#article">CATÁLOGO</a>
+            <a href="#testimonials">DEPOIMENTOS</a>
+            <a href="#footer">SOBRE</a>
+        </nav>
+
+        <span class="nav-divider" aria-hidden="true"></span>
+
+        <div class="auth-section">
+            @if (!authService.isLoggedIn()) {
+                <button class="btn-login" (click)="openLoginModal()">Entrar</button>
+            } @else {
+                <div class="user-profile">
+                    <span class="user-greeting">Olá, <strong>{{ authService.currentUser() }}</strong>!</span>
+                    <button class="btn-logout" (click)="logout()">Sair</button>
+                </div>
+            }
+        </div>
+    </div>
+
+    @if (isLoginModalOpen) {
+        <div class="modal-overlay" (click)="closeLoginModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <div class="modal-header">
+                    <h3>Área do Colecionador • Login</h3>
+                    <button class="modal-close-btn" (click)="closeLoginModal()" aria-label="Fechar modal">✕</button>
+                </div>
+
+                <form class="login-form" (submit)="handleLogin($event)">
+                    <div class="form-group">
+                        <label for="username">Nome ou Usuário:</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            [(ngModel)]="username" 
+                            placeholder="Digite seu nome (ex: Gabriel)" 
+                            autocomplete="username"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            [(ngModel)]="password" 
+                            placeholder="Digite sua senha fictícia" 
+                            autocomplete="current-password"
+                        />
+                    </div>
+
+                    @if (errorMessage) {
+                        <p class="error-message">{{ errorMessage }}</p>
+                    }
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn-cancel" (click)="closeLoginModal()">Cancelar</button>
+                        <button type="submit" class="btn-submit">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
 </header>

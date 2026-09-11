@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 interface Testimonials {
   name: string;
@@ -16,6 +17,8 @@ interface Testimonials {
   templateUrl: './section.html',
 })
 export class Section {
+  authService = inject(AuthService);
+
   testimonials: Testimonials[] = [
     {
       name: 'Eduardo Pugliese Benvenut',

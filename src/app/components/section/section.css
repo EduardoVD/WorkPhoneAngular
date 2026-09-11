@@ -238,6 +238,56 @@
     transform: translateY(-2px);
 }
 
+.login-required-notice {
+    background-color: #f5f5f5;
+    color: #000000;
+    border: 2px dashed #0080ff;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.form-field input:disabled,
+.testimonial-form textarea:disabled {
+    background-color: #e6e6e6;
+    color: #888888;
+    border-color: #aaaaaa;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.form-field input.user-locked {
+    background-color: #f0f7ff;
+    color: #0080ff;
+    font-weight: bold;
+    cursor: not-allowed;
+    border-color: #0080ff;
+    box-shadow: 2px 2px 0px #000000;
+}
+
+.disabled-option {
+    background-color: #e6e6e6 !important;
+    color: #888888 !important;
+    border-color: #aaaaaa !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    transform: none !important;
+}
+
+.btn-save:disabled,
+.btn-delete:disabled {
+    background-color: #e6e6e6;
+    color: #888888;
+    border-color: #aaaaaa;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
 @media (max-width: 650px) {
     .form-row {
         flex-direction: column;

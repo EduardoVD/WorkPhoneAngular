@@ -20,35 +20,71 @@
     <hr class="form-divider">
     <div class="testimonial-form">
         <h3>VOCÊ TAMBÉM PODE COMPARTILHAR O SEU RELATO COM NÓS LOGO ABAIXO!</h3>
+
+        @if (!authService.isLoggedIn()) {
+            <div class="login-required-notice">
+                <span>🔒 É necessário entrar em sua conta no cabeçalho da página para publicar um depoimento.</span>
+            </div>
+        }
+
         <div class="form-row">
-            <label class="form-field">NOME: <input type="text" placeholder="Seu Nome Completo..."/></label>
-            <label class="form-field">CIDADE: <input type="text" placeholder="Sua Sidade / Estado..."/></label>
+            <label class="form-field">
+                NOME: 
+                <input 
+                    type="text" 
+                    [value]="authService.isLoggedIn() ? authService.currentUser() : ''" 
+                    [placeholder]="authService.isLoggedIn() ? authService.currentUser() : 'Faça login para preencher...'"
+                    [disabled]="!authService.isLoggedIn()"
+                    readonly
+                    [class.user-locked]="authService.isLoggedIn()"
+                />
+            </label>
+            <label class="form-field">
+                CIDADE: 
+                <input type="text" placeholder="Sua Cidade / Estado..." [disabled]="!authService.isLoggedIn()"/>
+            </label>
         </div>
         <div class="form-group">
             <p class="form-label">SELECIONE O APARELHO QUE VOCÊ POSSUI E DESEJA ESCREVER UM RELATO:</p>
             <div class="radio-options">
-                <label class="radio-label"><input name="device" type="radio"/> Nokia 3310</label>
-                <label class="radio-label"><input name="device" type="radio"/> Motorola Razr V3</label>
-                <label class="radio-label"><input name="device" type="radio"/> Sony Ericsson W800i Walkman</label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="device" type="radio" [disabled]="!authService.isLoggedIn()"/> Nokia 3310
+                </label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="device" type="radio" [disabled]="!authService.isLoggedIn()"/> Motorola Razr V3
+                </label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="device" type="radio" [disabled]="!authService.isLoggedIn()"/> Sony Ericsson W800i Walkman
+                </label>
             </div>
         </div>
         <div class="form-group">
             <p class="form-label">QUAL FOI O SEU NÍVEL DE SATISFAÇÃO COM O PRODUTO?</p>
             <div class="radio-options">
-                <label class="radio-label"><input name="grade" type="radio"/> Péssimo</label>
-                <label class="radio-label"><input name="grade" type="radio"/> Ruim</label>
-                <label class="radio-label"><input name="grade" type="radio"/> Médio</label>
-                <label class="radio-label"><input name="grade" type="radio"/> Bom</label>
-                <label class="radio-label"><input name="grade" type="radio"/> Ótimo</label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="grade" type="radio" [disabled]="!authService.isLoggedIn()"/> Péssimo
+                </label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="grade" type="radio" [disabled]="!authService.isLoggedIn()"/> Ruim
+                </label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="grade" type="radio" [disabled]="!authService.isLoggedIn()"/> Médio
+                </label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="grade" type="radio" [disabled]="!authService.isLoggedIn()"/> Bom
+                </label>
+                <label class="radio-label" [class.disabled-option]="!authService.isLoggedIn()">
+                    <input name="grade" type="radio" [disabled]="!authService.isLoggedIn()"/> Ótimo
+                </label>
             </div>
         </div>
         <div class="form-group">
             <p class="form-label">DESCREVA SEU DEPOIMENTO EM RELAÇÃO AO PRODUTO LOGO ABAIXO:</p>
-            <textarea placeholder="Escreva seu Relato ou Experiência..." rows="4"></textarea>
+            <textarea placeholder="Escreva seu Relato ou Experiência..." rows="4" [disabled]="!authService.isLoggedIn()"></textarea>
         </div>
         <div class="form-actions">
-            <button type="button" class="btn-save">SALVAR</button>
-            <button type="reset" class="btn-delete">EXCLUIR</button>
+            <button type="button" class="btn-save" [disabled]="!authService.isLoggedIn()">SALVAR</button>
+            <button type="reset" class="btn-delete" [disabled]="!authService.isLoggedIn()">EXCLUIR</button>
         </div>
     </div>
 </section>
