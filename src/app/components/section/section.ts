@@ -45,4 +45,23 @@ export class Section {
       photo: '/images/clients/Ariel-Guareschi.png'
     }
   ];
+
+  saveSuccess = false;
+
+  salvarDepoimento(cidadeInput: HTMLInputElement, textareaInput: HTMLTextAreaElement) {
+    if (!this.authService.isLoggedIn()) return;
+    this.saveSuccess = true;
+
+    if (cidadeInput) cidadeInput.value = '';
+    if (textareaInput) textareaInput.value = '';
+
+    setTimeout(() => {
+      this.saveSuccess = false;
+    }, 5000);
+  }
+
+  limparFormulario() {
+    this.saveSuccess = false;
+  }
 }
+

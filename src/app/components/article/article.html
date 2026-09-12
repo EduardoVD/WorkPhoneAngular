@@ -2,7 +2,7 @@
     <h2><strong>CATÁLOGO</strong></h2>
     <div class="device-grid">
         @for (device of devices; track device.title) {
-            <div class="card">
+            <article class="card">
                 <img [src]="device.photo" [alt]="device.title" class="device-photo">
                 <div class="card-info">
                     <h3 class="device-title">{{ device.title }}</h3>
@@ -11,7 +11,7 @@
                         VERIFICAR ESPECIFICAÇÕES DO APARELHO
                     </button>
                 </div>
-            </div>
+            </article>
         }
     </div>
 

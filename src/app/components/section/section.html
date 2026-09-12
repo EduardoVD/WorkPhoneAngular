@@ -23,7 +23,13 @@
 
         @if (!authService.isLoggedIn()) {
             <div class="login-required-notice">
-                <span>🔒 É necessário entrar em sua conta no cabeçalho da página para publicar um depoimento.</span>
+                <span>É necessário entrar em sua conta no cabeçalho da página para publicar um depoimento.</span>
+            </div>
+        }
+
+        @if (saveSuccess) {
+            <div class="feedback-success">
+                <span>Depoimento enviado com sucesso! Obrigado por compartilhar seu relato com a Telefonia Retrô.</span>
             </div>
         }
 
@@ -41,7 +47,7 @@
             </label>
             <label class="form-field">
                 CIDADE: 
-                <input type="text" placeholder="Sua Cidade / Estado..." [disabled]="!authService.isLoggedIn()"/>
+                <input #cidadeField type="text" placeholder="Sua Cidade / Estado..." [disabled]="!authService.isLoggedIn()"/>
             </label>
         </div>
         <div class="form-group">
@@ -80,11 +86,11 @@
         </div>
         <div class="form-group">
             <p class="form-label">DESCREVA SEU DEPOIMENTO EM RELAÇÃO AO PRODUTO LOGO ABAIXO:</p>
-            <textarea placeholder="Escreva seu Relato ou Experiência..." rows="4" [disabled]="!authService.isLoggedIn()"></textarea>
+            <textarea #textField placeholder="Escreva seu Relato ou Experiência..." rows="4" [disabled]="!authService.isLoggedIn()"></textarea>
         </div>
         <div class="form-actions">
-            <button type="button" class="btn-save" [disabled]="!authService.isLoggedIn()">SALVAR</button>
-            <button type="reset" class="btn-delete" [disabled]="!authService.isLoggedIn()">EXCLUIR</button>
+            <button type="button" class="btn-save" [disabled]="!authService.isLoggedIn()" (click)="salvarDepoimento(cidadeField, textField)">SALVAR</button>
+            <button type="reset" class="btn-delete" [disabled]="!authService.isLoggedIn()" (click)="limparFormulario()">EXCLUIR</button>
         </div>
     </div>
 </section>
