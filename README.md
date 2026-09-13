@@ -29,13 +29,13 @@ Aplicação desenvolvida em Angular para apresentar informações e preservar a 
 ## Imagens da Aplicação
 
 ### 1. Cabeçalho e Área Principal (Quem Somos, História e Serviços)
-![Cabeçalho e Área Principal](/images/screenshots/Header-Main.png)
+![Cabeçalho e Área Principal](public/images/screenshots/Header-Main.png)
 
 ### 2. Catálogo de Celulares Clássicos
-![Catálogo de Aparelhos](/images/screenshots/Article.png)
+![Catálogo de Aparelhos](public/images/screenshots/Article.png)
 
 ### 3. Depoimentos de Colecionadores, Formulário e Rodapé
-![Depoimentos e Rodapé](/images/screenshots/Section-Footer.png)
+![Depoimentos e Rodapé](public/images/screenshots/Section-Footer.png)
 
 ## Vídeo
 [Link do vídeo publicado no YouTube](https://www.youtube.com/)
