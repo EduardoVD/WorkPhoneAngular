@@ -38,4 +38,4 @@ Aplicação desenvolvida em Angular para apresentar informações e preservar a 
 ![Depoimentos e Rodapé](public/images/screenshots/Section-Footer.png)
 
 ## Vídeo
-[Link do vídeo publicado no YouTube](https://www.youtube.com/)
+[Link do vídeo publicado no YouTube](https://www.youtube.com/watch?v=-LRl_gaR014)
